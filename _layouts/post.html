@@ -1,0 +1,77 @@
+---
+layout: default
+---
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      {%- if page.author -%}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">Written by {{ page.author }}</span>
+        </span>
+      {%- endif -%}
+      <span> on </span>
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  <div class="post-details">
+    {%- if page.author -%}
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="p-author h-card" itemprop="name">Author: {{ page.author }}</span>
+    </span>
+    {%- endif -%}
+    {% assign wordCount = page.content | number_of_words %}
+    <p class="post_content_size">words: {{wordCount}}</p>
+  </div>
+
+{{ page.category }} 
+  
+  <div class="related-posts">
+    <h4>Related articles: </h4>
+    
+    {% assign maxRelated = 4 %}
+    {% assign minCommonTags =  2 %}
+    {% assign maxRelatedCounter = 0 %}
+    
+    {% for post in site.posts %}
+    
+        {% assign sameTagCount = 0 %}
+        {% assign commonTags = '' %}
+    
+        {% for category in post.categories %}
+          {% if post.url != page.url %}
+            {% if page.categories contains category %}
+              {% assign sameTagCount = sameTagCount | plus: 1 %}
+              {% capture tagmarkup %} <span class="label label-default">{{ category }}</span> {% endcapture %}
+              {% assign commonTags = commonTags | append: tagmarkup %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+    
+        {% if sameTagCount >= minCommonTags %}
+          <ul>
+          <li style="list-style-type:none;"><a class="related-article" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+          </ul>
+          {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+          {% if maxRelatedCounter >= maxRelated %}
+            {% break %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+</article>
