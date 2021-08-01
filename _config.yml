@@ -1,9 +1,8 @@
 title: PHANTASM
 baseurl: ""
-#repository: afshinpaydar-binary
 email: afshinpaydar@gmail.com
 description: >-
- G33k personal blog
+ Afshin Paydar
 url: "https://www.afshinpaydar.com"
 twitter_username: paydar_afshin
 github_username:  afshinpaydar
@@ -11,9 +10,9 @@ github_username:  afshinpaydar
 
 author: Afshin
 
-copyright: "Phantasm"
+copyright: "Afshin Paydar"
 linkedin_username: afshinpaydar
-youtube_username: Afshin Paydar
+youtube_username: channel/UCNCqCYfnbG_ntWaniX1Gm9A
 
 plugins:
   - jekyll-feed
