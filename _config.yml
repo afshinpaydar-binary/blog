@@ -1,9 +1,8 @@
 title: PHANTASM
-repository: afshinpaydar-binary/blog
 email: afshinpaydar@gmail.com
 description: >-
  G33k personal blog
-baseurl: "/"
+baseurl: "/blog"
 url: "https://blog.afshinpaydar.com"
 twitter_username: paydar_afshin
 github_username:  afshinpaydar
