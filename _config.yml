@@ -2,17 +2,17 @@ title: PHANTASM
 email: afshinpaydar@gmail.com
 description: >-
  G33k personal blog
-baseurl: "/blog"
-url: "https://afshinpaydar.com"
-twitter_username: tayebeKavousi
-github_username:  tayebe-kavousi
+baseurl: "/"
+url: "https://blog.afshinpaydar.com"
+twitter_username: paydar_afshin
+github_username:  afshinpaydar
 
 
 author: Afshin
 
 copyright: "Phantasm"
 linkedin_username: afshinpaydar
-youtube_username: myYouTube
+youtube_username: Afshin Paydar
 
 plugins:
   - jekyll-feed
