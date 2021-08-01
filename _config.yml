@@ -1,4 +1,4 @@
-title: PHANTASM
+title: Afshin's blog
 baseurl: ""
 email: afshinpaydar@gmail.com
 description: >-
@@ -12,7 +12,7 @@ author: Afshin
 
 copyright: "Afshin Paydar"
 linkedin_username: afshinpaydar
-youtube_username: channel/UCNCqCYfnbG_ntWaniX1Gm9A
+youtube_username: channel%2FUCNCqCYfnbG_ntWaniX1Gm9A
 
 plugins:
   - jekyll-feed
